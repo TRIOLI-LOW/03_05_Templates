@@ -4,6 +4,8 @@
 
 template<class T>
 class table {
+private:
+    table(const table&) = delete;
 public:
     unsigned rows = 0;
     unsigned cols = 0;

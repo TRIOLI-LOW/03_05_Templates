@@ -25,7 +25,7 @@ int main() {
     std::vector<int> arr = { 4, 1, 3, 6, 25, 54 };
     Functor f = std::for_each(arr.begin(), arr.end(), Functor());
     ;
-
+    
     std::cout << f.get_sum() << std::endl;
     std::cout << f.get_count();
 
