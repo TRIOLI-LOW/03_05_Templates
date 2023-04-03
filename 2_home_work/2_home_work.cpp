@@ -6,6 +6,7 @@ template<class T>
 class table {
 private:
     table(const table&) = delete;
+    table operator= (const table&) = delete;
 public:
     unsigned rows = 0;
     unsigned cols = 0;
@@ -44,10 +45,18 @@ public:
 int main()
 {
     
-    auto test = table<int>(2, 3);
+    table<int> test(2, 3);
    
     test[0][0] = 4;
     std::cout << test[0][0];
+
+    {
+        table<int> t1(2, 3);
+        table<int> t2(2, 3);
+
+        t1 = t2;
+    } // Программа упадет здесь
+
 }
 
 
